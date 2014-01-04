@@ -14,5 +14,4 @@ public interface LinkedList<T> extends Iterator<T>, Iterable<T> {
     public T head();
     public T tail();
     public int size();
-    public T[] toArray();
 }

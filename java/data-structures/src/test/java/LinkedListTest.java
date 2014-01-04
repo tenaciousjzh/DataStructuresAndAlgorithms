@@ -2,15 +2,10 @@ import org.bytescale.datastructures.impl.SimpleLinkedList;
 import org.bytescale.datastructures.spec.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
-import sun.print.resources.serviceui_pt_BR;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by Jared on 1/3/14.
- */
 public class LinkedListTest {
     private LinkedList<String> list;
 
@@ -79,5 +74,11 @@ public class LinkedListTest {
     @Test(expected = IllegalArgumentException.class)
     public void testRemoveNull() {
         list.remove(null);
+    }
+
+    @Test
+    public void testContains() {
+        list.add("abc");
+        assertTrue(list.contains("abc"));
     }
 }

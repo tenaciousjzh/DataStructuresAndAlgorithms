@@ -4,17 +4,16 @@ import org.bytescale.datastructures.spec.LinkedList;
 
 import java.util.Iterator;
 
-/**
- *
- */
 public class SimpleLinkedList<T> implements LinkedList<T> {
     private ListItem<T> head;
     private ListItem<T> tail;
     private ListItem<T> nextItem;
+    private ListItem<T> previousItem;
+
     private int size = 0;
     boolean isFirstIteration = true;
     boolean resetForIteration = false;
-    private ListItem<T> previousItem;
+
 
     @Override
     public void add(T item) {
@@ -101,7 +100,6 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
                 current = current.getNext();
             }
         }
-
         --size;
         if (size < 0) { size = 0; }
     }
@@ -109,19 +107,15 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
     @Override
     public boolean contains(T item) {
         boolean containsItem = false;
-        ListItem<T> current = head;
-        boolean seeking = true;
-        while (seeking) {
-            if (current != null && current.getNext() != null) {
-                if (current.equals(item)) {
-                    containsItem = true;
-                    seeking = false;
-                } else {
-                    current = current.getNext();
-                }
+        if (item == null) {
+            return containsItem;
+        }
+        for (T element : this) {
+            if (element.equals(item)) {
+                containsItem = true;
+                break;
             }
         }
-
         return containsItem;
     }
 
@@ -144,25 +138,6 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
     @Override
     public int size() {
         return this.size;
-    }
-
-    @Override
-    public T[] toArray() {
-        Object[] tArray = new Object[size];
-
-        if (head != null) {
-            ListItem<T> current = head;
-            int index = 0;
-            while (index < size) {
-                if (current != null) {
-                    tArray[index] = current;
-                    ++index;
-                    current = current.getNext();
-                }
-            }
-        }
-
-        return (T[]) tArray;
     }
 
     @Override
