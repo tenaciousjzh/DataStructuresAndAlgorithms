@@ -1,4 +1,4 @@
-package org.bytescale.datastructures.impl;
+package org.bytescale.datastructures.util.lists;
 
 /**
  * Created by Jared on 1/3/14.

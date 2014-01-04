@@ -1,5 +1,7 @@
-import org.bytescale.datastructures.impl.SimpleLinkedList;
-import org.bytescale.datastructures.spec.LinkedList;
+package org.bytescale.datastructures.tests;
+
+import org.bytescale.datastructures.util.lists.SimpleLinkedList;
+import org.bytescale.datastructures.spec.lists.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
 

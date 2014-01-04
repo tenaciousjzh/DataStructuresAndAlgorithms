@@ -1,6 +1,4 @@
-package org.bytescale.datastructures.spec;
-
-import org.bytescale.datastructures.impl.ListItem;
+package org.bytescale.datastructures.spec.lists;
 
 import java.util.Iterator;
 

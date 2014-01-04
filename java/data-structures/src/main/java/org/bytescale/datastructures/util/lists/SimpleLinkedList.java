@@ -1,6 +1,7 @@
-package org.bytescale.datastructures.impl;
+package org.bytescale.datastructures.util.lists;
 
-import org.bytescale.datastructures.spec.LinkedList;
+import org.bytescale.datastructures.util.lists.ListItem;
+import org.bytescale.datastructures.spec.lists.LinkedList;
 
 import java.util.Iterator;
 
