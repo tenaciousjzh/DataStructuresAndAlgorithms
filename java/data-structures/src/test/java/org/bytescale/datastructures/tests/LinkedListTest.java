@@ -5,8 +5,7 @@ import org.bytescale.datastructures.spec.lists.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class LinkedListTest {
     private LinkedList<String> list;
@@ -82,5 +81,15 @@ public class LinkedListTest {
     public void testContains() {
         list.add("abc");
         assertTrue(list.contains("abc"));
+    }
+
+    @Test
+    public void testGetItem() {
+        list.add("123");
+        list.add("Some other thing");
+
+        assertNotNull(list.get(1));
+        assertEquals("Some other thing", list.get(1));
+        assertNull(list.get(2001));
     }
 }

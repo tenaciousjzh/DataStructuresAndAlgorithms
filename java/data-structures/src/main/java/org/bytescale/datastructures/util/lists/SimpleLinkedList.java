@@ -1,6 +1,5 @@
 package org.bytescale.datastructures.util.lists;
 
-import org.bytescale.datastructures.util.lists.ListItem;
 import org.bytescale.datastructures.spec.lists.LinkedList;
 
 import java.util.Iterator;
@@ -13,11 +12,11 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
 
     private int size = 0;
     boolean isFirstIteration = true;
-    boolean resetForIteration = false;
+    boolean restartIterationFlag = false;
 
 
     @Override
-    public void add(T item) {
+    public void add(T item) throws IllegalArgumentException {
         if (item == null) {
             throw new IllegalArgumentException("Cannot add a null item to the LinkedList");
         }
@@ -114,6 +113,7 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
         for (T element : this) {
             if (element.equals(item)) {
                 containsItem = true;
+                resetForIteration();
                 break;
             }
         }
@@ -142,6 +142,26 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
     }
 
     @Override
+    public T get(int index) {
+        T item = null;
+        int i = 0;
+        for (T element : this) {
+            if (i == index) {
+                item = element;
+                resetForIteration();
+                break;
+            }
+            i++;
+        }
+        return item;
+    }
+
+    private void resetForIteration() {
+        restartIterationFlag = true;
+        nextItem = head;
+    }
+
+    @Override
     public Iterator<T> iterator() {
         return this;
     }
@@ -149,7 +169,7 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
     @Override
     public boolean hasNext() {
         boolean hasNext = nextItem != null;
-        if (resetForIteration) {
+        if (restartIterationFlag) {
             nextItem = head;
         }
         return hasNext;
@@ -161,10 +181,10 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
 
         if (isFirstIteration) {
             isFirstIteration = false;
-            resetForIteration = false;
+            restartIterationFlag = false;
             nextItem = head;
         } else {
-            resetForIteration = false;
+            restartIterationFlag = false;
             nextItem = nextItem.getNext();
         }
 
@@ -172,7 +192,7 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
         if (tail == null || item.equals(tail.getItem())) {
             isFirstIteration = true;
             nextItem = null; //sets our stopping condition
-            resetForIteration = true;
+            restartIterationFlag = true;
         }
 
         return item;
