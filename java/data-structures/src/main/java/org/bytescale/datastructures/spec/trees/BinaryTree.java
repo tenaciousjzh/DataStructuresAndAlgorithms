@@ -1,15 +1,20 @@
 package org.bytescale.datastructures.spec.trees;
 
-public interface BinaryTree<T> {
+import java.util.List;
+
+public interface BinaryTree<T extends Comparable<? super T>> {
 
     public enum TraversalOrder { BREADTH_FIRST, DEPTH_FIRST_PRE_ORDER, DEPTH_FIRST_IN_ORDER, DEPTH_FIRST_POST_ORDER }  ;
 
     public void setRootNode(BinaryTreeNode<T> root);
     public BinaryTreeNode<T>  getRootNode();
 
-    public void add(BinaryTreeNode<T> node);
-    public boolean hasNodeWithListingValue(T nodeValue);
+    public void insert(T listing);
+    public boolean isInTree(T nodeValue);
+    public BinaryTreeNode<T> search(T nodeValue);
 
 
-    public T[] traverseAndFlatten(TraversalOrder traversalOrder);
+    public List<T> traverseAndFlatten(TraversalOrder traversalOrder);
+
+    public int size();
 }

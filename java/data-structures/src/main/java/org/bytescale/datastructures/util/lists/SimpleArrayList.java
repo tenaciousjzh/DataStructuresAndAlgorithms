@@ -18,7 +18,7 @@ public class SimpleArrayList<T> implements List<T> {
     @Override
     public void add(T item) throws IllegalArgumentException {
         if (item == null) {
-            throw new IllegalArgumentException("Cannot add a null value for the item argument to the SimpleArrayList");
+            throw new IllegalArgumentException("Cannot insert a null value for the item argument to the SimpleArrayList");
         }
         if (currentIndex + 1 > items.length) {
             increaseCapacity();

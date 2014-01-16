@@ -1,6 +1,6 @@
 package org.bytescale.datastructures.spec.trees;
 
-public interface BinaryTreeNode<T> extends Comparable<T> {
+public interface BinaryTreeNode<T extends Comparable<? super T>> {
     public void setListing(T listing);
     public T getListing();
 
@@ -8,5 +8,5 @@ public interface BinaryTreeNode<T> extends Comparable<T> {
     public BinaryTreeNode<T> getLeftChild();
 
     public void setRightChild(BinaryTreeNode<T> node);
-    public BinaryTreeNode<T> getRightNode();
+    public BinaryTreeNode<T> getRightChild();
 }

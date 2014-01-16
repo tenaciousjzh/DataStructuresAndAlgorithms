@@ -18,7 +18,7 @@ public class SimpleLinkedList<T> implements LinkedList<T> {
     @Override
     public void add(T item) throws IllegalArgumentException {
         if (item == null) {
-            throw new IllegalArgumentException("Cannot add a null item to the LinkedList");
+            throw new IllegalArgumentException("Cannot insert a null item to the LinkedList");
         }
 
         ListItem<T> newItem = new ListItem(item);

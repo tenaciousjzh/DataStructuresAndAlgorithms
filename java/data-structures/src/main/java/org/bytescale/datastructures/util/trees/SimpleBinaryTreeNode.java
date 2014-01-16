@@ -2,7 +2,8 @@ package org.bytescale.datastructures.util.trees;
 
 import org.bytescale.datastructures.spec.trees.BinaryTreeNode;
 
-public class SimpleBinaryTreeNode<T> implements BinaryTreeNode<T> {
+public class SimpleBinaryTreeNode<T extends Comparable<? super T>>
+        implements BinaryTreeNode<T> {
     private T listing;
     private BinaryTreeNode<T> leftChild;
     private BinaryTreeNode<T> rightChild;
@@ -33,16 +34,7 @@ public class SimpleBinaryTreeNode<T> implements BinaryTreeNode<T> {
     }
 
     @Override
-    public BinaryTreeNode<T> getRightNode() {
+    public BinaryTreeNode<T> getRightChild() {
         return rightChild;
-    }
-
-    @Override
-    public int compareTo(T otherNode) {
-        if (otherNode == null) {
-            return -1;
-        }
-
-        return 0;
     }
 }
