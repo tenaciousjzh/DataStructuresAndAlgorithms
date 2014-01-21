@@ -6,7 +6,7 @@ import org.bytescale.datastructures.spec.trees.BinaryTreeTraverser;
 
 import java.util.Iterator;
 
-public abstract class AbstractDepthFirstTraverser<T extends Comparable<? super T>>
+public abstract class AbstractTraverser<T extends Comparable<? super T>>
         implements BinaryTreeTraverser<T> {
     protected BinaryTree<T> tree;
     protected BinaryTree.TraversalOrder traversalOrder;

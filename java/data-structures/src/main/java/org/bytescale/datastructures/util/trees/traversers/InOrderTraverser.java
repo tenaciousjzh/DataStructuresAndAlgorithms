@@ -2,8 +2,7 @@ package org.bytescale.datastructures.util.trees.traversers;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
-import org.bytescale.datastructures.spec.trees.BinaryTree;
+
 import org.bytescale.datastructures.spec.trees.BinaryTreeNode;
 
 import java.util.Iterator;
@@ -13,7 +12,7 @@ import java.util.Iterator;
  * @param <T>
  */
 public class InOrderTraverser<T extends Comparable<? super T>>
-        extends AbstractDepthFirstTraverser<T> {
+        extends AbstractTraverser<T> {
 
     @Override
     public Iterator<BinaryTreeNode<T>> iterator() {

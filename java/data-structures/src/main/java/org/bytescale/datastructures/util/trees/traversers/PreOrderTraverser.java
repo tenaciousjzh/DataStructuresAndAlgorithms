@@ -1,20 +1,17 @@
 package org.bytescale.datastructures.util.trees.traversers;
 
-import org.bytescale.datastructures.spec.trees.BinaryTree;
 import org.bytescale.datastructures.spec.trees.BinaryTreeNode;
-import org.bytescale.datastructures.spec.trees.BinaryTreeTraverser;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * Visits the Node itself, the Left Child, then the Right Child
  * @param <T>
  */
 public class PreOrderTraverser<T extends Comparable<? super T>>
-        extends AbstractDepthFirstTraverser<T>  {
+        extends AbstractTraverser<T> {
     @Override
     public Iterator<BinaryTreeNode<T>> iterator() {
         return new PreOrderIterator<T>(tree.getRootNode()).iterator();

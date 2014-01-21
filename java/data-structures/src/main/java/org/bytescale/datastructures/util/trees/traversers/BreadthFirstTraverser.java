@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BreadthFirstTraverser <T extends Comparable<? super T>>
-        extends AbstractDepthFirstTraverser<T> {
+        extends AbstractTraverser<T> {
     @Override
     public Iterator<BinaryTreeNode<T>> iterator() {
         return new BreadthFirstIterable<T>(tree.getRootNode()).iterator();

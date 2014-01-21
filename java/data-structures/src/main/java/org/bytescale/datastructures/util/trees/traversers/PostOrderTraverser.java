@@ -1,19 +1,17 @@
 package org.bytescale.datastructures.util.trees.traversers;
 
-import org.bytescale.datastructures.spec.trees.BinaryTree;
 import org.bytescale.datastructures.spec.trees.BinaryTreeNode;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * Visits the Left Child, the Right Child and then the Node itself
  * @param <T>
  */
 public class PostOrderTraverser<T extends Comparable<? super T>>
-        extends AbstractDepthFirstTraverser<T> {
+        extends AbstractTraverser<T> {
 
     @Override
     public Iterator<BinaryTreeNode<T>> iterator() {
