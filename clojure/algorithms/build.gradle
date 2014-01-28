@@ -6,9 +6,16 @@ buildscript {
 apply plugin: 'clojure'
 
 repositories {
+    mavenCentral()
+    //maven { url "http://oss.sonatype.org/content/repositories/releases" }
     maven { url "http://clojars.org/repo" }
+
 }
 
 dependencies {
     compile "org.clojure:clojure:1.5.1"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
 }

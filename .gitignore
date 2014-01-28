@@ -2,3 +2,6 @@
 .gradle
 out/
 build/
+clojure/algorithms/.lein-failures
+clojure/algorithms/target/
+

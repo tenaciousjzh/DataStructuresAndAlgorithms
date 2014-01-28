@@ -4,7 +4,7 @@
   (:require [org.bytescale.datastructures.spec.bag :as spec])
   (:import [clojure.lang ITransientCollection]))
 
-(defrecord StandardBag [^ITransientCollection list]
+(defrecord MutableBag [^ITransientCollection list]
   spec/Bag
   (add-item [this item]
     (conj! list item))
