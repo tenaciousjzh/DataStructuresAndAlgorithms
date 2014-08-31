@@ -1,17 +1,15 @@
 package org.bytescale.algorithms.tests;
 
 import org.apache.commons.io.FilenameUtils;
-import org.bytescale.algorithms.Pair;
-import org.bytescale.algorithms.TwoSum;
-import org.bytescale.algorithms.Tuple;
-import org.bytescale.algorithms.tests.util.In;
+import org.bytescale.algorithms.counting.Pair;
+import org.bytescale.algorithms.counting.TwoSum;
+import org.bytescale.datastructures.util.In;
 import org.bytescale.measurements.StopWatch;
 import org.junit.Test;
 
 import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;

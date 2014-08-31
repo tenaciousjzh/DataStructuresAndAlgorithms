@@ -89,4 +89,15 @@ public class QuickFind implements UnionFind {
     public int count() {
         return count;
     }
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        String newLine = System.getProperty("line.separator");
+
+        for (int i = 0; i < id.length; i++) {
+            sb.append("id[" + i + "] = " + id[i] + newLine);
+        }
+        return sb.toString();
+    }
 }
