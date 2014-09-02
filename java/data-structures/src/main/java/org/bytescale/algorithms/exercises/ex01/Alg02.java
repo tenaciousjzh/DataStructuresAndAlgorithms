@@ -1,9 +1,9 @@
-package org.bytescale.algorithms.exercises;
+package org.bytescale.algorithms.exercises.ex01;
 
 /**
  * Created by Jared on 8/30/14.
  */
-public class AlgEx0112 {
+public class Alg02 {
     //Give the type and value of each of the following expressions
     public static void main(String[] args) {
         //(1+2.236)/2 should be a float

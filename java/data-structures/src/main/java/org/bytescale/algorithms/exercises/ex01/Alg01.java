@@ -1,9 +1,9 @@
-package org.bytescale.algorithms.exercises;
+package org.bytescale.algorithms.exercises.ex01;
 
 /**
  * Created by Jared on 8/30/14.
  */
-public class AlgEx0111 {
+public class Alg01 {
     public static void main(String[] args) {
         //Expression evaluation
         //(0+15)/2 should equal 7

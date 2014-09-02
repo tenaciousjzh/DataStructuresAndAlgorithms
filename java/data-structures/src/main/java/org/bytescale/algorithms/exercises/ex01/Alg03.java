@@ -1,4 +1,4 @@
-package org.bytescale.algorithms.exercises;
+package org.bytescale.algorithms.exercises.ex01;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * 1.1.3 - Write a program that takes three integer command-line arguments and prints equal if all
  * three are equal, and not equal otherwise.
  */
-public class AlgEx0113 {
+public class Alg03 {
 
    public static void main(String[] args) throws IOException {
        System.out.println("Enter 3 integers and the program will tell you if all three are equal.");
