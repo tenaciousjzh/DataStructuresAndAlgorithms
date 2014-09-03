@@ -27,10 +27,7 @@ public class Alg12 {
 			
 		}
 		System.out.println("===============================================");
-		// a[0] = 9
-		// a[1] = 8
-		// ...
-		// a[9] = 0
+
 		for (int i = 0; i < 10; i++)
 			System.out.println("a[" + i + "] = " + a[i]);
 	}
