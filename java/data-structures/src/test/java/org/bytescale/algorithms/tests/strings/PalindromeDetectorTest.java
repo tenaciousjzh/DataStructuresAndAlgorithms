@@ -3,7 +3,7 @@ package org.bytescale.algorithms.tests.strings;
 import org.junit.Test;
 
 import static org.bytescale.algorithms.strings.PalindromeDetector.isPalindrome;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class PalindromeDetectorTest {
@@ -14,6 +14,8 @@ public class PalindromeDetectorTest {
 		assertTrue(isPalindrome(palindrome));
 		String evenLengthPalindrome = "abba";
 		assertTrue(isPalindrome(evenLengthPalindrome));
+		String nonPalindrome = "evil";
+		assertFalse(isPalindrome(nonPalindrome));
 	}
 	
 }
