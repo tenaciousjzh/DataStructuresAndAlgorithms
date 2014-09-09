@@ -3,7 +3,7 @@ package org.bytescale.datastructures.tests;
 import org.apache.commons.io.FilenameUtils;
 import org.bytescale.datastructures.spec.linked.UnionFind;
 import org.bytescale.datastructures.tests.util.UnionFindTestDataReader;
-import org.bytescale.datastructures.util.linked.QuickUnion;
+import org.bytescale.datastructures.util.linked.QuickUnionFind;
 import org.bytescale.datastructures.util.linked.WeightedQuickUnion;
 import org.junit.Test;
 

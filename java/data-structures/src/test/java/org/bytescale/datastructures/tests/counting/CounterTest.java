@@ -1,8 +1,8 @@
-package org.bytescale.algorithms.tests.counting;
+package org.bytescale.datastructures.tests.counting;
 
 import static org.junit.Assert.*;
 
-import org.bytescale.algorithms.counting.Counter;
+import org.bytescale.datastructures.counting.Counter;
 import org.junit.Test;
 
 public class CounterTest {

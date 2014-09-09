@@ -24,5 +24,7 @@ public class UnionFindTestDataReader {
     public int readInt() {
         return scanner.nextInt();
     }
+    
+    
 
 }

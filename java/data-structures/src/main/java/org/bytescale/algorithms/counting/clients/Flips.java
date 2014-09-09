@@ -1,6 +1,6 @@
 package org.bytescale.algorithms.counting.clients;
 
-import org.bytescale.algorithms.counting.Counter;
+import org.bytescale.datastructures.counting.Counter;
 import org.bytescale.datastructures.util.StdOut;
 import org.bytescale.datastructures.util.StdRandom;
 

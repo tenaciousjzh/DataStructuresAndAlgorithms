@@ -27,35 +27,30 @@ import org.bytescale.datastructures.spec.linked.UnionFind;
  *      We'll add an additional array called sizes to keep track of the number of objects in the tree rooted at i
  * 2. Find an algorithm to solve it
  * 		To initialize, set the id of the object to be the same as its position in the array
- * 		For the find() algorithm, just see if p and q have the same root
+ * 		For the find() algorithm, just see if p and q have the same root.
+ * 		As an improvement, just after computing the root of an element, p, set the id of each 
+ * 		examined node to point to that root. This makes the tree even more shallow and faster to 
+ * 		traverse from an element to its root.
+ * 
  * 		For the union() algorithm, link the root of the smaller tree to the root of the larger tree.
- * 		Then updated the sizes array.
+ * 		Then updated the sizes array. 
  * 
  * 3. Fast Enough? Fits in Memory?
- * 		The constructor requires that we visit each element 2N (Once for id, once for sizes).
- * 
- *      Weighted Quick Union overcomes the deficiency of potentially having really tall trees. This reduces
- *      the number of elements to visit in the array.
- *      
- *      It has been proven that this achieves much faster performance is ~log (base 2) of N or lg N.
- *      That is because the depth of any node, x, is at most lg N away.
- *      
- *      For example, if the tree grew from 1 million to 1 billion elements, the find operation would 
- *      change from executing 20 times to only 30 times! That's extremely efficient.
- *      
- * 		Even with this level of efficiency, the algorithm can be improved.
+ * 		This improves on Weighted Quick Union by achieving lg * N (That's a funny function that says how many times do we iterated until lg * N = 1)
+ * 		If N = 2 ^ 65536 we would iterate only 5 times! This essentially makes performance of this very close to linear time.
+ * 		Now, if N = 10^9 (1 billion), this algorithm reduces Quick Find (in {@link BasicUnionFind}) from 30 years to 6 seconds!
  * 4. If not, figure out why.
  * 5. Find a way to address the problem.
  * 6. Iterate until satisfied.
  */
-public class WeightedQuickUnion implements UnionFind {
+public class WeightedQuickUnionWithPathCompression implements UnionFind {
     //linked trees by index
     private int[] id;
     //num elements under a root (indexed)
     private int[] sizes;
     private int count;
 
-    public WeightedQuickUnion(int N) {
+    public WeightedQuickUnionWithPathCompression(int N) {
         id = new int[N];
         count = N;
         for (int i = 0; i < N; i++) {
@@ -70,9 +65,12 @@ public class WeightedQuickUnion implements UnionFind {
 
     private int root(int p) {
     	//find the component label
+    	//follow the links until you reach the root (no more links up the tree)
     	while (p != id[p]) {
-            //follow the links until you reach the root (no more links up the tree)
-            p = id[p];
+            //This improvement makes the tree more shallow by making every other node in the 
+    		//path point to its parent.
+            id[p] = id[id[p]];
+    		p = id[p];
         }
         return p;
     }

@@ -10,23 +10,33 @@ import org.bytescale.datastructures.spec.linked.UnionFind;
  *      objects in a generic way. Plus, it allows us to index the objects into an array very easily.
  * 2. Find an algorithm to solve it
  * 3. Fast Enough? Fits in Memory?
+ * 		Cost for this Model:
+ * 		The constructor makes 1 pass through the array to initialize its values (N)
+ * 		Then union() iterates through the array to join connected objects (N)
+ * 		That means we're at least ~N^2
  *      This version works with small data sets but the performance is not so good for medium to large sets.
  *      For instance, if we ran this with a data set that ends up with 1 component, that means it had to access the id[]
- *      N-1 times. Each time it calls
+ *      N-1 times. Each time it calls.
  * 4. If not, figure out why.
+ * 		The reason this will not perform well for any large data set is because it iterates the entire collection too many times.
+ * 		For example, if N = 10^9, it could take 30 years to complete the algorithm!
  * 5. Find a way to address the problem.
+ * 
  * 6. Iterate until satisfied.
  */
-public class QuickFind implements UnionFind {
+public class BasicUnionFind implements UnionFind {
 
     private int[] id;
+    /**
+     * The number of component groups of connected objects
+     */
     private int count;
 
     /**
      * Initializes sites (objects) with labels (0 through N-1)
      * @param N
      */
-    public QuickFind(int N) {
+    public BasicUnionFind(int N) {
         id = new int[N];
         count = N;
         for (int i = 0; i < N; i++) {
@@ -48,11 +58,12 @@ public class QuickFind implements UnionFind {
         if (connected(p,q)) {
             return;
         }
-        int pID = find(p);
+        int pid = find(p);
+        int qid = find(q);
         //Change the values from id[p] to id[q]
         for (int i = 0; i < id.length; i++) {
-            if (id[i] == pID) {
-                id[i] = id[q];
+            if (id[i] == pid) {
+                id[i] = qid;
             }
         }
         count--; //We've combined two components so decrement count by 1

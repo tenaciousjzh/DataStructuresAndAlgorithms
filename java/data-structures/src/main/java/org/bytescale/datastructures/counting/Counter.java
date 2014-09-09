@@ -1,4 +1,4 @@
-package org.bytescale.algorithms.counting;
+package org.bytescale.datastructures.counting;
 
 public class Counter {
 	private final String id;

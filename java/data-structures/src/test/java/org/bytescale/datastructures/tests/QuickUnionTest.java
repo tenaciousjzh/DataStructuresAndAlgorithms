@@ -3,7 +3,7 @@ package org.bytescale.datastructures.tests;
 import org.apache.commons.io.FilenameUtils;
 import org.bytescale.datastructures.spec.linked.UnionFind;
 import org.bytescale.datastructures.tests.util.UnionFindTestDataReader;
-import org.bytescale.datastructures.util.linked.QuickUnion;
+import org.bytescale.datastructures.util.linked.QuickUnionFind;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -20,7 +20,7 @@ public class QuickUnionTest {
 
         UnionFindTestDataReader input = new UnionFindTestDataReader(FilenameUtils.concat(location.getPath(), "quiz-01-quick-find-q01.txt"));
         int N = input.readInt();
-        UnionFind uf = new QuickUnion(N);
+        UnionFind uf = new QuickUnionFind(N);
 
         while (false == input.isEmpty()) {
             int p = input.readInt();
