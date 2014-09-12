@@ -39,7 +39,7 @@ public class ThreeSumBruteForceTest {
 		Stopwatch sw = new Stopwatch();
 		int zeroSums = ts.countZeroSumTuples(set);
 		sw.elapsedTime();
-		System.out.println("=======================================")
+		System.out.println("=======================================");
 		System.out.println("Brute Force on " + set.length + " ints");
 		System.out.println("Zero Sums found: " + zeroSums);
 		System.out.println(sw);

@@ -12,7 +12,7 @@ public class UnionFindClient {
 	public static void main(String[] args) {
 		In input = new In(args[0]);
 		int N = input.readInt();
-		UnionFind uf = new WeightedQuickUnionWithPathCompression(N);
+		UnionFind uf = new WeightedQuickUnion(N);
 		while (input.hasNextLine()) {
 			String line = input.readLine();
 			if (line == null || line.equals("")) {
@@ -28,5 +28,6 @@ public class UnionFindClient {
 			StdOut.println(p + " " + q);
 		}
 		StdOut.println("Found " + uf.count() + " component groups of connected objects.");
+		StdOut.println("id array contains: " + uf.toString());
 	}
 }
