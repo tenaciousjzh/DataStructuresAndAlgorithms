@@ -3,7 +3,7 @@ package org.bytescale.datastructures.util.clients;
 import org.bytescale.datastructures.spec.linked.UnionFind;
 import org.bytescale.datastructures.util.In;
 import org.bytescale.datastructures.util.StdOut;
-import org.bytescale.datastructures.util.linked.BasicUnionFind;
+import org.bytescale.datastructures.util.linked.QuickFind;
 import org.bytescale.datastructures.util.linked.WeightedQuickUnion;
 import org.bytescale.datastructures.util.linked.WeightedQuickUnionWithPathCompression;
 
@@ -12,7 +12,7 @@ public class UnionFindClient {
 	public static void main(String[] args) {
 		In input = new In(args[0]);
 		int N = input.readInt();
-		UnionFind uf = new WeightedQuickUnionWithPathCompression(N);
+		UnionFind uf = new WeightedQuickUnion(N);
 		while (input.hasNextLine()) {
 			String line = input.readLine();
 			if (line == null || line.equals("")) {
@@ -28,5 +28,6 @@ public class UnionFindClient {
 			StdOut.println(p + " " + q);
 		}
 		StdOut.println("Found " + uf.count() + " component groups of connected objects.");
+		StdOut.println(uf.toString());
 	}
 }

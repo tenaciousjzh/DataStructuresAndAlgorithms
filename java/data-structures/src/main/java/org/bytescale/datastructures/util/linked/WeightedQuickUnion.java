@@ -119,14 +119,29 @@ public class WeightedQuickUnion implements UnionFind {
         StringBuffer sb = new StringBuffer();
         String newLine = System.getProperty("line.separator");
 
+        sb.append("id[ ");
         for (int i = 0; i < id.length; i++) {
-            sb.append("id[" + i + "] = " + id[i] + newLine);
+            sb.append( i + " ");
         }
-
+        sb.append("]" + newLine);
+        
+        sb.append("    ");
+        for (int i = 0; i < id.length; i++) {
+        	sb.append(id[i] + " ");
+        }
         sb.append(newLine);
+        
+        sb.append("sizes[ ");
         for (int j = 0; j < sizes.length; j++) {
-            sb.append("sizes[" + j + "] = " + sizes[j] + newLine);
+            sb.append(j + " ");
         }
+        sb.append("] " + newLine);
+        
+        sb.append("       ");
+        for (int j = 0; j < sizes.length; j++) {
+        	sb.append(sizes[j] + " ");
+        }
+        sb.append(newLine);
         return sb.toString();
     }
 }
