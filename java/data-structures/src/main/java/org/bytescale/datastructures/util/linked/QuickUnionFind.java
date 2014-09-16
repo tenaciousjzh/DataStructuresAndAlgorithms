@@ -6,7 +6,7 @@ import org.bytescale.datastructures.spec.linked.UnionFind;
  * Implementation of a data structure that implements the Union find algorithm
  * Steps to Developing a Usable Algorithm
  * 1. Model the problem
- *      Like the Quick Find (found in {@link BasicUnionFind}, we'll model this with an array.
+ *      Like the Quick Find (found in {@link QuickFind}, we'll model this with an array.
  *      However, in this case, the array will represent a set of trees (or forest). Each element 
  *      in the array will contain a reference to its parent in the tree (the index location of the parent).
  *      Example:

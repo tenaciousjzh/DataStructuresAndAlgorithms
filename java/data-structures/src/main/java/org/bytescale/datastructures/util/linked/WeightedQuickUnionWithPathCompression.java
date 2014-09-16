@@ -38,7 +38,7 @@ import org.bytescale.datastructures.spec.linked.UnionFind;
  * 3. Fast Enough? Fits in Memory?
  * 		This improves on Weighted Quick Union by achieving lg * N (That's a funny function that says how many times do we iterated until lg * N = 1)
  * 		If N = 2 ^ 65536 we would iterate only 5 times! This essentially makes performance of this very close to linear time.
- * 		Now, if N = 10^9 (1 billion), this algorithm reduces Quick Find (in {@link BasicUnionFind}) from 30 years to 6 seconds!
+ * 		Now, if N = 10^9 (1 billion), this algorithm reduces Quick Find (in {@link QuickFind}) from 30 years to 6 seconds!
  * 4. If not, figure out why.
  * 5. Find a way to address the problem.
  * 6. Iterate until satisfied.

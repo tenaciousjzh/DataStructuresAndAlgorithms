@@ -24,7 +24,7 @@ import org.bytescale.datastructures.spec.linked.UnionFind;
  * 
  * 6. Iterate until satisfied.
  */
-public class BasicUnionFind implements UnionFind {
+public class QuickFind implements UnionFind {
 
     private int[] id;
     /**
@@ -36,7 +36,7 @@ public class BasicUnionFind implements UnionFind {
      * Initializes sites (objects) with labels (0 through N-1)
      * @param N
      */
-    public BasicUnionFind(int N) {
+    public QuickFind(int N) {
         id = new int[N];
         count = N;
         for (int i = 0; i < N; i++) {
