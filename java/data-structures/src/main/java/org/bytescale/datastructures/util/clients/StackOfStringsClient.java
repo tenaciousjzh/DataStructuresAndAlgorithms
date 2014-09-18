@@ -1,9 +1,9 @@
 package org.bytescale.datastructures.util.clients;
 
-import org.bytescale.datastructures.spec.stacks.StackOfStrings;
 import org.bytescale.datastructures.spec.stacks.StringStack;
 import org.bytescale.datastructures.util.StdIn;
 import org.bytescale.datastructures.util.StdOut;
+import org.bytescale.datastructures.util.stacks.StackOfStrings;
 
 public class StackOfStringsClient {
 	public static void main(String[] args) {

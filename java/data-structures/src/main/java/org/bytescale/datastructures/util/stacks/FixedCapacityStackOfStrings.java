@@ -1,5 +1,6 @@
-package org.bytescale.datastructures.spec.stacks;
+package org.bytescale.datastructures.util.stacks;
 
+import org.bytescale.datastructures.spec.stacks.StringStack;
 import org.bytescale.datastructures.util.StdOut;
 
 public class FixedCapacityStackOfStrings implements StringStack {

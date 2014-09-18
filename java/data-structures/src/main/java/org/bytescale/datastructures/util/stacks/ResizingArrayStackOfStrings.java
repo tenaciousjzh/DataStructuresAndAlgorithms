@@ -1,4 +1,6 @@
-package org.bytescale.datastructures.spec.stacks;
+package org.bytescale.datastructures.util.stacks;
+
+import org.bytescale.datastructures.spec.stacks.StringStack;
 
 public class ResizingArrayStackOfStrings implements StringStack {
 	private String[] s;
@@ -50,7 +52,7 @@ public class ResizingArrayStackOfStrings implements StringStack {
 	}
 
 	/**
-	 * Average peformance is constant (1) with worst case being N because of halving operation
+	 * Average performance is constant (1) with worst case being N because of halving operation
 	 */
 	@Override
 	public String pop() {

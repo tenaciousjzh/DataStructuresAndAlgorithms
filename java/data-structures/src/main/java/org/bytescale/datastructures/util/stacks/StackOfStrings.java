@@ -1,4 +1,6 @@
-package org.bytescale.datastructures.spec.stacks;
+package org.bytescale.datastructures.util.stacks;
+
+import org.bytescale.datastructures.spec.stacks.StringStack;
 
 /**
  * Uses a linked list to manage the stack.
