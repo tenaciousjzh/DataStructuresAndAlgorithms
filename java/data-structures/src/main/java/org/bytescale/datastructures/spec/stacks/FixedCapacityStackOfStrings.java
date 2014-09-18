@@ -2,7 +2,7 @@ package org.bytescale.datastructures.spec.stacks;
 
 import org.bytescale.datastructures.util.StdOut;
 
-public class FixedCapacityStackOfStrings {
+public class FixedCapacityStackOfStrings implements StringStack {
 	private String[] s;
 	private int N = 0;
 	
@@ -29,5 +29,10 @@ public class FixedCapacityStackOfStrings {
 		//This prevents "loitering" (orphaned items that were already popped but still on stack
 		s[N] = null; 
 		return item;
+	}
+
+	@Override
+	public int size() {
+		return N;
 	}
 }
