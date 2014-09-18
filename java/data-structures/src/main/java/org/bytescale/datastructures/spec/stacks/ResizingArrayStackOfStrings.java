@@ -10,6 +10,8 @@ public class ResizingArrayStackOfStrings implements StringStack {
 	@Override
 	public void push(String item) {
 		if (N == s.length) {
+			//By doubling the size of the array 
+			//on average, the insertion cost becomes 3N or ~N
 			resize(2 * s.length);
 		}
 		s[N++] = item;
@@ -28,6 +30,12 @@ public class ResizingArrayStackOfStrings implements StringStack {
 		String item = s[--N];
 		//This prevents "loitering" (orphaned items that were already popped but still on stack
 		s[N] = null; 
+		if (N > 0 && N == s.length/4) {
+			//This shrinks the array to prevent it from becoming too sparse.
+			//Halving it when it's one quarter full is a way of 
+			//preventing thrashing from frequent push-pop operations.
+			resize(s.length/2);
+		}
 		return item;
 	}
 
