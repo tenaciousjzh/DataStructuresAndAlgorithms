@@ -3,10 +3,30 @@ package org.bytescale.datastructures.spec.stacks;
 public class ResizingArrayStackOfStrings implements StringStack {
 	private String[] s;
 	private int N = 0;
+	
+	/**
+	 * <p>
+	 * Memory usage analysis:
+	 * 	8 bytes (reference to an array)
+	 * 24 bytes (array overhead)
+	 *  8 bytes x array size
+	 *  4 bytes (int N)
+	 *  4 bytes (padding)
+	 *  
+	 *  Uses between ~8N and ~32N (excluding string values created by client).
+	 *  </p>
+	 *  <p>
+	 *  Every operation takes constant amortized time (over time it average out to constant)
+	 *  Less wasted space
+	 *  </p>
+	 */
 	public ResizingArrayStackOfStrings() {
 		s = new String[1];
 	}
 	
+	/**
+	 * Average performance is constant (1) with worst case being N because of doubling operation.
+	 */
 	@Override
 	public void push(String item) {
 		if (N == s.length) {
@@ -17,6 +37,10 @@ public class ResizingArrayStackOfStrings implements StringStack {
 		s[N++] = item;
 	}
 	
+	/**
+	 * 
+	 * @param capacity
+	 */
 	private void resize(int capacity) {
 		String[] copy = new String[capacity];
 		for (int i = 0; i < N; i++) {
@@ -25,6 +49,9 @@ public class ResizingArrayStackOfStrings implements StringStack {
 		s = copy;
 	}
 
+	/**
+	 * Average peformance is constant (1) with worst case being N because of halving operation
+	 */
 	@Override
 	public String pop() {
 		String item = s[--N];
@@ -44,6 +71,9 @@ public class ResizingArrayStackOfStrings implements StringStack {
 		return N == 0;
 	}
 
+	/**
+	 * Average performance is constant (1) with worst case being N 
+	 */
 	@Override
 	public int size() {
 		return N;

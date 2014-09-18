@@ -1,5 +1,14 @@
 package org.bytescale.datastructures.spec.stacks;
 
+/**
+ * Uses a linked list to manage the stack.
+ * <p>
+ * Every operation takes constant time in the worst case.
+ * Uses extra time and space to deal with the links.
+ * </p>
+ * @author Jared.Holmberg
+ *
+ */
 public class StackOfStrings implements StringStack {
 	private Node first = null;
 
