@@ -5,6 +5,8 @@ import static org.bytescale.algorithms.sorting.SortHelper.*;
 /**
  * Idea is to move entries more than one position at a time by h-sorting
  * How to h-sort an array? Insertion sort, with stride length h
+ * Performance:
+ * Worst case is 3x+1 compares O(N^3/2)
  *
  */
 public class ShellSort {
